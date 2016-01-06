@@ -9,6 +9,10 @@ public class Calc {
 
     private ArrayList<Integer> primeNumbers;
 
+    Calc(){
+        primeNumbers = new ArrayList<Integer>();
+    }
+
     private void addPrimeNumber(int number){
         int count = 0;
         for(int i = 1; i <= number ; i++){
