@@ -11,18 +11,25 @@ public class Output {
     private int inputNumber;
 
     private String printCalc(){
-        String s = "";
+        String primeNumString = ""; //소수들을 문자열로 바꾸는 작업
+        int enterCount = 0; //10개단위로 끊기 위한 카운트
         for(int i = 0; i < primeNumbers.size(); i++){
-            s += primeNumbers.get(i);
-            if(i != primeNumbers.size() - 1)
-                s += ", ";
+            primeNumString += primeNumbers.get(i);
+            if(i != primeNumbers.size() - 1) //마지막 소수에는 콤마를 안붙임
+                primeNumString += ", ";
+                enterCount++;
+            if(enterCount == 10){  //10개단위가 되면 줄바꿈
+                primeNumString += "\n";
+                enterCount =0;
+            }
         }
         StringBuilder stringBuilder = new StringBuilder();
         String printString = stringBuilder
                 .append("입력한 숫자 n은 : ")
                 .append(inputNumber)
-                .append(" 소수들은 : ")
-                .append(s)
+                .append("\n")
+                .append("소수들은 : ")
+                .append(primeNumString)
                 .toString();
 
         return printString;
