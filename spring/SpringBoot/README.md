@@ -6,16 +6,15 @@
 
 
 ######pom.xml
-"'
-<parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.1.8.RELEASE</version>
-</parent>
-<dependencies>
-    <dependency>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.1.8.RELEASE</version>
+    </parent>
+    <dependencies>
+      <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-</dependencies>
-"'
+      </dependency>
+    </dependencies>
