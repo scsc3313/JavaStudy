@@ -18,7 +18,7 @@ public class Main {
                 totalNumber += i;
             if(i % 5 == 0)
                 totalNumber += i;
-            if(i % 30 ==0)
+            if(i % 15 ==0)
                 totalNumber -= i;
 
         }
