@@ -19,6 +19,7 @@ public class Main {
                 i = 1;
             }
         }
+
         StringBuilder primeFactorNums = new StringBuilder();
         primeFactorNums.append("primeFactors : ");
         for(int i = 0; i < primeFactorNum.size() ; i++){
