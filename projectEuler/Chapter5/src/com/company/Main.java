@@ -44,7 +44,11 @@ public class Main {
                     if(firstArray.get(j) == secondArray.get(k)){
                         factorMinMultiplyNumber /= firstArray.get(j);
                         firstArray.remove(j);
+                        if(j > 1)
+                            j--;
                         secondArray.remove(k);
+                        if(k > 1)
+                            k--;
                     }
                 }
             }
