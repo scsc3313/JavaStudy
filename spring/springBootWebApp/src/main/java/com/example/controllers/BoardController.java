@@ -60,4 +60,12 @@ public class BoardController {
         boardService.deleteBoard(id);
         return "redirect:/boards";
     }
+
+    @RequestMapping("boards/eval/{id}")
+    public String addLike(@PathVariable Integer id, Model model){
+        model.addAttribute("boards", boardService.addLike(boardService.getBoardById(id)));
+        return "redirect:/boards/";
+    }
+
+
 }

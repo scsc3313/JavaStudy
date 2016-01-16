@@ -1,7 +1,5 @@
 package com.example.domain;
 
-import org.springframework.data.annotation.Version;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,14 +13,12 @@ public class Board {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Integer Id;
 
-    @Version
-    private Integer version;
-
-    private String boardId;
+    private Integer studyId;
+    private Integer memId;
     private String description;
-    private String imageUrl;
+    private Integer likeCount;
 
     public String getDescription() {
         return description;
@@ -32,36 +28,35 @@ public class Board {
         this.description = description;
     }
 
-    public Integer getVersion() {
-        return version;
-    }
-
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
-
     public Integer getId() {
-        return id;
+        return Id;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        Id = id;
     }
 
-    public String getBoardId() {
-        return boardId;
+    public Integer getStudyId() {
+        return studyId;
     }
 
-    public void setBoardId(String boardId) {
-        this.boardId = boardId;
+    public void setStudyId(Integer studyId) {
+        this.studyId = studyId;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public Integer getMemId() {
+        return memId;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setMemId(Integer memId) {
+        this.memId = memId;
     }
 
+    public Integer getLikeCount() {
+        return likeCount;
+    }
+
+    public void setLikeCount(Integer likeCount) {
+        this.likeCount = likeCount;
+    }
 }

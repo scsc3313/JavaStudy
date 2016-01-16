@@ -13,4 +13,6 @@ public interface BoardService {
     Board saveBoard(Board board);
 
     void deleteBoard(Integer id);
+
+    Board addLike(Board board);
 }

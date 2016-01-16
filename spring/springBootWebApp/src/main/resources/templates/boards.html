@@ -12,20 +12,20 @@
         <h2>Board List</h2>
         <table class="table table-striped">
             <tr>
-                <th>Id</th>
-                <th>Board Id</th>
-                <th>Description</th>
-                <th>View</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th>내용</th>
+                <th>추천수</th>
+                <th>추천</th>
+                <th>보기</th>
+                <th>수정</th>
+                <th>삭제</th>
             </tr>
             <tr th:each="board : ${boards}">
-                <td th:text="${board.id}"><a href="/board/${board.id}">Id</a></td>
-                <td th:text="${board.boardId}">Board Id</td>
-                <td th:text="${board.description}">descirption</td>
-                <td><a th:href="${'/board/' + board.id}">View</a></td>
-                <td><a th:href="${'/board/edit/' + board.id}">Edit</a></td>
-                <td><a th:href="${'/board/delete/' + board.id}">Delete</a></td>
+                <td th:text="${board.description}"><a href="/board/${board.id}">Description</a></td>
+                <td th:text="${board.likeCount}">likeCount</td>
+                <td><a th:href="${'/boards/eval/' + board.id}">추천</a></td>
+                <td><a th:href="${'/board/' + board.id}">보기</a></td>
+                <td><a th:href="${'/board/edit/' + board.id}">수정</a></td>
+                <td><a th:href="${'/board/delete/' + board.id}">삭제</a></td>
             </tr>
         </table>
 

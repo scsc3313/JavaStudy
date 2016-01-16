@@ -37,4 +37,9 @@ public class BoardServiceImpl implements BoardService {
     public void deleteBoard(Integer id) {
         boardRepository.delete(id);
     }
+
+    public Board addLike(Board board){
+        board.setLikeCount(board.getLikeCount()+1);
+        return boardRepository.save(board);
+    }
 }
