@@ -1,7 +1,7 @@
 //package com.example;
 //
-//import com.example.domain.Board;
-//import com.example.repositories.BoardRepository;
+//import com.example.domain.comment;
+//import com.example.repositories.commentRepository;
 //import org.junit.Test;
 //import org.junit.runner.RunWith;
 //import org.springframework.beans.factory.annotation.Autowired;
@@ -16,29 +16,29 @@
 // */
 //@RunWith(SpringJUnit4ClassRunner.class)
 //@SpringApplicationConfiguration(classes = {RepositoryConfiguration.class})
-//public class BoardRepositoryTest {
+//public class commentRepositoryTest {
 //
-//    private BoardRepository boardRepository;
+//    private commentRepository commentRepository;
 //
 //    @Autowired
-//    public void setBoardRepository(BoardRepository boardRepository) {
-//        this.boardRepository = boardRepository;
+//    public void setcommentRepository(commentRepository commentRepository) {
+//        this.commentRepository = commentRepository;
 //    }
 //
 //    @Test
 //    public void testSaveProduct(){
 //        //setup product
-//        Board product = new Board();
+//        comment product = new comment();
 //        product.setDescription("Spring Framework Guru Shirt");
-//        product.setBoardId("1234");
+//        product.setcommentId("1234");
 //
 //        //save product, verify has ID value after save
 //        assertNull(product.getId()); //null before save
-//        boardRepository.save(product);
+//        commentRepository.save(product);
 //        assertNotNull(product.getId()); //not null after save
 //
 //        //fetch from DB
-//        Board fetchedProduct = boardRepository.findOne(product.getId());
+//        comment fetchedProduct = commentRepository.findOne(product.getId());
 //
 //        //should not be null
 //        assertNotNull(fetchedProduct);
@@ -49,22 +49,22 @@
 //
 //        //update description and save
 //        fetchedProduct.setDescription("New Description");
-//        boardRepository.save(fetchedProduct);
+//        commentRepository.save(fetchedProduct);
 //
 //        //get from DB, should be updated
-//        Board fetchedUpdatedProduct = boardRepository.findOne(fetchedProduct.getId());
+//        comment fetchedUpdatedProduct = commentRepository.findOne(fetchedProduct.getId());
 //        assertEquals(fetchedProduct.getDescription(), fetchedUpdatedProduct.getDescription());
 //
 //        //verify count of products in DB
-//        long productCount = boardRepository.count();
+//        long productCount = commentRepository.count();
 //        assertEquals(productCount, 1);
 //
 //        //get all products, list should only have one
-//        Iterable<Board> products = boardRepository.findAll();
+//        Iterable<comment> products = commentRepository.findAll();
 //
 //        int count = 0;
 //
-//        for(Board p : products){
+//        for(comment p : products){
 //            count++;
 //        }
 //

@@ -9,7 +9,7 @@ import javax.persistence.Id;
  * Created by HSH on 2016. 1. 13..
  */
 @Entity
-public class Board {
+public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,6 +19,10 @@ public class Board {
     private Integer memId;
     private String description;
     private Integer likeCount;
+
+    public Comment(){
+        likeCount = 0;
+    }
 
     public String getDescription() {
         return description;

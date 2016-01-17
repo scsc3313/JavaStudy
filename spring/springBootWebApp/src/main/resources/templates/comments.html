@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>comments</title>
+</head>
+<!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(comments)}">
+        <h2>comment List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>내용</th>
+                <th>추천수</th>
+                <th>추천</th>
+                <th>보기</th>
+                <th>수정</th>
+                <th>삭제</th>
+            </tr>
+            <tr th:each="comment : ${comments}">
+                <td th:text="${comment.description}"><a href="/comment/${comment.id}">Description</a></td>
+                <td th:text="${comment.likeCount}">likeCount</td>
+                <td><a th:href="${'/comments/eval/' + comment.id}">추천</a></td>
+                <td><a th:href="${'/comment/' + comment.id}">보기</a></td>
+                <td><a th:href="${'/comment/edit/' + comment.id}">수정</a></td>
+                <td><a th:href="${'/comment/delete/' + comment.id}">삭제</a></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+</body>
+</html>

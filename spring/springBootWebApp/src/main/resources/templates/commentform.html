@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
     <meta charset="UTF-8"/>
-    <title>BoardForm</title>
+    <title>commentForm</title>
     <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
           th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
           rel="stylesheet" media="screen" />
@@ -21,7 +21,7 @@
 <div class="container">
     <h2>글쓰기</h2>
     <div>
-        <form class="form-horizontal" th:object="${board}" th:action="@{/board}" method="post">
+        <form class="form-horizontal" th:object="${comment}" th:action="@{/comment}" method="post">
             <input type="hidden" th:field="*{id}"/>
             <input type="hidden" th:name="likeCount" th:field="*{likeCount}"/>
             <input type="hidden" th:name="memID"/>
