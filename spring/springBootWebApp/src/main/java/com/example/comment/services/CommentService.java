@@ -1,6 +1,6 @@
-package com.example.services;
+package com.example.comment.services;
 
-import com.example.domain.Comment;
+import com.example.comment.domain.Comment;
 
 /**
  * Created by HSH on 2016. 1. 15..

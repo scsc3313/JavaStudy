@@ -1,6 +1,6 @@
-package com.example.repositories;
+package com.example.comment.repositories;
 
-import com.example.domain.Comment;
+import com.example.comment.domain.Comment;
 import org.springframework.data.repository.CrudRepository;
 
 /**

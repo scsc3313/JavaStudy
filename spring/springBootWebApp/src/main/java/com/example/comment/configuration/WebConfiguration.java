@@ -1,4 +1,4 @@
-package com.example.configuration;
+package com.example.comment.configuration;
 
 import org.springframework.boot.context.embedded.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;

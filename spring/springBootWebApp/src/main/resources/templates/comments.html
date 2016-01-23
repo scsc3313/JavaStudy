@@ -8,6 +8,23 @@
 <body>
 <div class="container">
     <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+
+    <div class="jumbotron">
+        <div class="row text-center">
+            <div class="">
+                <h2>소프트웨어 공학</h2>
+                <p>교수 : 변상용</p>
+                <p>전공 : 컴퓨터공학과 3학년</p>
+                <p>학점 : 3학점</p>
+                <p>꿀 농도 : 1.5 학습 농도 : 2.7</p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <img src="../../static/images/softengineer.jpg" width="400"
+                 th:src="@{/images/softengineer.jpg}"/>
+        </div>
+    </div>
+
     <div th:if="${not #lists.isEmpty(comments)}">
         <h2>comment List</h2>
         <table class="table table-striped">

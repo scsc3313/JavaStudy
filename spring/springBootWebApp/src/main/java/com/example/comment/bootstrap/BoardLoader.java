@@ -1,7 +1,8 @@
-//package com.example.bootstrap;
+//package com.example.comment.bootstrap;
 //
-//import com.example.domain.comment;
-//import com.example.repositories.commentRepository;
+//import com.example.comment.domain.comment;
+//import com.example.comment.repositories.CommentRepository;
+//import com.example.comment.repositories.commentRepository;
 //import org.apache.log4j.Logger;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.context.ApplicationListener;
@@ -10,18 +11,16 @@
 //
 ///**
 // * Created by HSH on 2016. 1. 14..
+// 웹이 로딩될 때 실행되는 부분!
 // */
 //@Component
-//public class commentLoader implements ApplicationListener<ContextRefreshedEvent> {
-//
-//    private commentRepository commentRepository;
-//
-//    private Logger log = Logger.getLogger(commentLoader.class);
-//
+//public class CommentLoader implements ApplicationListener<ContextRefreshedEvent> {
 //    @Autowired
-//    public void setcommentRepository(commentRepository commentRepository) {
-//        this.commentRepository = commentRepository;
-//    }
+//    private CommentRepository commentRepository;
+//
+//    private Logger log = Logger.getLogger(CommentLoader.class);
+//
+//
 //
 //    @Override
 //    public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {

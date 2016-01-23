@@ -1,7 +1,7 @@
-package com.example.controllers;
+package com.example.comment.controllers;
 
-import com.example.domain.Comment;
-import com.example.services.CommentService;
+import com.example.comment.domain.Comment;
+import com.example.comment.services.CommentService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

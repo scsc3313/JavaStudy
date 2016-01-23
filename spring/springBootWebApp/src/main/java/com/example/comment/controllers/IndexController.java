@@ -1,4 +1,4 @@
-package com.example.controllers;
+package com.example.comment.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
