@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8"/>
+    <title>강의</title>
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen" />
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+            th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+    <link href="../static/css/style.css"
+          th:href="@{css/style.css}" rel="stylesheet" media="screen"/>
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+    <div class="container">
+        <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    </div>
+    <div class="container">
+        <h2>study Details</h2>
+        <div>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">수강반번호</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${study.studyId}">수강반번호</p></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">교수이름 : </label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${study.teacher}">교수 이름</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">과목명 : </label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${study.title}">과목명</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">학점 : </label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${study.credit}">학점</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">설명 : </label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${study.description}">설명</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

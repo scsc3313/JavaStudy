@@ -11,12 +11,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class CommentServiceImpl implements CommentService {
 
-    private CommentRepository commentRepository;
-
     @Autowired
-    public void setcommentRepository(CommentRepository commentRepository) {
-        this.commentRepository = commentRepository;
-    }
+    private CommentRepository commentRepository;
 
     @Override
     public Iterable<Comment> listAllcomments() {

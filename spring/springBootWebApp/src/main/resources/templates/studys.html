@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="UTF-8" />
+    <title>강의상세</title>
+        <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+              th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"
+              rel="stylesheet" media="screen" />
+
+        <script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+                th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"></script>
+
+        <link href="../static/css/style.css"
+              th:href="@{css/style.css}" rel="stylesheet" media="screen"/>
+        <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+    <div class="container">
+        <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    </div>
+    <div th:if="${not #lists.isEmpty(studys)}">
+        <h2>study List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>수강반번호</th>
+                <th>교수이름</th>
+                <th>과목명</th>
+                <th>학점</th>
+                <th>설명</th>
+                <th>보기</th>
+            </tr>
+            <tr th:each="study : ${studys}">
+                <td th:text="${study.studyId}"><a href="#">수강반번호</a></td>
+                <td th:text="${study.teacher}">교수이름</td>
+                <td th:text="${study.title}">과목명</td>
+                <td th:text="${study.credit}">학점</td>
+                <td th:text="${study.description}">설명</td>
+                <td><a th:href="${'/study/' + study.studyId}">보기</a></td>
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+</html>

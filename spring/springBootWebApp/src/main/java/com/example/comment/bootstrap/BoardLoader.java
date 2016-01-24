@@ -1,7 +1,7 @@
 //package com.example.comment.bootstrap;
 //
 //import com.example.comment.domain.comment;
-//import com.example.comment.repositories.CommentRepository;
+//import com.example.comment.repositories.StudyRepository;
 //import com.example.comment.repositories.commentRepository;
 //import org.apache.log4j.Logger;
 //import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@
 //@Component
 //public class CommentLoader implements ApplicationListener<ContextRefreshedEvent> {
 //    @Autowired
-//    private CommentRepository commentRepository;
+//    private StudyRepository commentRepository;
 //
 //    private Logger log = Logger.getLogger(CommentLoader.class);
 //
