@@ -7,6 +7,7 @@ public class Main {
     private HashMap<Integer, Integer> hashNumbers;
     private int number;
     private int maxCount = 0;
+    private int maxNumber = 0;
 
     Main(){
         hashNumbers = new HashMap<>();
@@ -24,6 +25,7 @@ public class Main {
             number--;
         }
         System.out.println(maxCount);
+        System.out.println(maxNumber);
     }
 
     private void calc(int number){
@@ -41,8 +43,10 @@ public class Main {
                 count++;
             }
             hashNumbers.put(number, count);
-            if(count > maxCount)
+            if(count > maxCount){
                 maxCount = count;
+                maxNumber = number;
+            }
             count = 0;
         }
     }
