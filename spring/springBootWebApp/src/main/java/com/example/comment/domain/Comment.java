@@ -16,7 +16,7 @@ public class Comment {
     private Integer Id;
 
     private Integer studyId;
-    private Integer memId;
+    private String memId;
     private String description;
     private Integer likeCount;
 
@@ -48,11 +48,11 @@ public class Comment {
         this.studyId = studyId;
     }
 
-    public Integer getMemId() {
+    public String getMemId() {
         return memId;
     }
 
-    public void setMemId(Integer memId) {
+    public void setMemId(String memId) {
         this.memId = memId;
     }
 

@@ -1,5 +1,7 @@
 package com.example.comment.controllers;
 
+import com.example.comment.domain.Comment;
+import com.example.comment.services.CommentService;
 import com.example.comment.services.StudyService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +22,9 @@ public class StudyController {
     @Autowired
     private StudyService studyService;
 
+    @Autowired
+    private CommentService commentService;
+
     @RequestMapping(value = "/studys", method = RequestMethod.GET)
     public String list(Model model){
         model.addAttribute("studys", studyService.listAllstudys());
@@ -29,7 +34,8 @@ public class StudyController {
     @RequestMapping("study/{studyId}")
     public String showComment(@PathVariable Integer studyId, Model model){
         model.addAttribute("study", studyService.getStudyById(studyId));
+        model.addAttribute("comments", commentService.findByStudyId(studyId));
+        model.addAttribute("comment", new Comment());
         return "studyshow";
     }
-
 }

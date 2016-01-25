@@ -52,19 +52,20 @@ public class CommentController {
     @RequestMapping(value = "comment", method = RequestMethod.POST)
     public String saveComment(Comment comment){
         commentService.saveComment(comment);
-        return "redirect:/comment/" + comment.getId();
+        return "redirect:/study/" + comment.getStudyId();
     }
 
     @RequestMapping("comment/delete/{id}")
     public String delete(@PathVariable Integer id){
+        int studyId = commentService.getCommentById(id).getStudyId();
         commentService.deleteComment(id);
-        return "redirect:/comments";
+        return "redirect:/study/"+ studyId;
     }
 
     @RequestMapping("comments/eval/{id}")
     public String addLike(@PathVariable Integer id, Model model){
         model.addAttribute("comments", commentService.addLike(commentService.getCommentById(id)));
-        return "redirect:/comments/";
+        return "redirect:/study/" + commentService.getCommentById(id).getStudyId();
     }
 
 

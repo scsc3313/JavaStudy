@@ -9,4 +9,5 @@
 #####기술
 
     Spring Boot 기반으로 만들어졌습니다.
-    DB는 mysql을 이용하였고, jdbc를 이용하였습니다.
+    DB는 mysql를 이용하였습니다.
+    JPA를 이용하여 쉽게 CRUD를 구현하였습니다.

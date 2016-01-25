@@ -5,6 +5,8 @@ import com.example.comment.repositories.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by HSH on 2016. 1. 15..
  */
@@ -22,6 +24,11 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public Comment getCommentById(Integer id) {
         return commentRepository.findOne(id);
+    }
+
+    @Override
+    public List<Comment> findByStudyId(Integer studyId) {
+        return commentRepository.findByStudyId(studyId);
     }
 
     @Override
