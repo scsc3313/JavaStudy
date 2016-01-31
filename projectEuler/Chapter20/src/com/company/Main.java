@@ -1,8 +1,9 @@
 package com.company;
 
-import java.util.ArrayList;
+import java.math.BigInteger;
 
 public class Main {
+    private int sum;
 
     public static void main(String[] args) {
         Main main = new Main();
@@ -10,54 +11,15 @@ public class Main {
     }
 
     private void control(){
-
-        int sum = 0;
-        ArrayList<Integer> numbers = new ArrayList<>();
-        int maxNum = 99;
-        int startNum = 1;
-        int count = 0;
-        numbers.add(1);
-        for(int i = maxNum; i > 97; i--){
-            for(int k = 0; k < numbers.size(); k++){
-                startNum = numbers.get(k) * i;
-                int restNumber = 0;
-                int restNumber2 = 0;
-                if(startNum > 9){
-                    restNumber = startNum%10;
-                    startNum = startNum/10;
-                    count++;
-                    if(startNum > 9){
-                        restNumber2 = startNum%10;
-                        startNum = startNum/10;
-                        count++;
-                    }
-                }
-                for(int j = 0; j < count; j++){
-                    numbers.add(j, startNum);
-                    if(restNumber != 0){
-                        if(numbers.get(j+1) != null){
-                            restNumber += numbers.get(j+1);
-                            if(restNumber > 9){
-                                restNumber -= 10;
-                                restNumber2++;
-                            }
-                        }
-                        numbers.add(j+1, restNumber);
-                    }
-
-                    if(restNumber2 != 0){
-                        if(numbers.get(j+2) != null){
-                            restNumber2 += numbers.get(j+2);
-                            if(restNumber2 > 9){
-                                restNumber2 -= 10;
-                                numbers.add(j+3, 1);
-                            }
-                        }
-                        numbers.add(j+2, restNumber2);
-                    }
-                    System.out.println(startNum);
-                }
-            }
+        BigInteger number = BigInteger.valueOf(1);
+        for(int i = 1; i < 101 ; i++){
+            number = number.multiply(BigInteger.valueOf(i));
         }
+        String numberString = String.valueOf(number);
+        char[] numbers = numberString.toCharArray();
+        for(int i = 0; i < numbers.length ; i++){
+            sum += numbers[i] - 48;
+        }
+        System.out.println(sum);
     }
 }
