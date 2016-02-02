@@ -28,7 +28,11 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public List<Comment> findByStudyId(Integer studyId) {
-        return commentRepository.findByStudyId(studyId);
+        int length = commentRepository.findByStudyId(studyId).size();
+        if(length > 10)
+            length = 10;
+        List<Comment> viewList = commentRepository.findByStudyId(studyId).subList(0, length);
+        return viewList;
     }
 
     @Override
