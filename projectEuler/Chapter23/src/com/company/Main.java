@@ -9,6 +9,7 @@ public class Main {
     private ArrayList<Integer> overNumbers;
     private ArrayList<Integer> madeByOverNumbers;
     private BigInteger totalSum;
+    private static final int maxNumber = 28123;
 
 
     Main(){
@@ -32,7 +33,7 @@ public class Main {
 
     private void calculator() {
 
-        for(int i = 0; i <= 28123; i++){
+        for(int i = 0; i <= maxNumber; i++){
             totalSum = totalSum.add(BigInteger.valueOf(i));
         }
         for(int i = 0; i < madeByOverNumbers.size() ; i++){
@@ -45,14 +46,15 @@ public class Main {
         for(int i = 0; i < overNumbers.size() ; i++){
             for(int j = 0; j < overNumbers.size() ; j++){
                 int tempSum = overNumbers.get(i) + overNumbers.get(j);
-                if(!madeByOverNumbers.contains(tempSum))
+                if(!madeByOverNumbers.contains(tempSum) && tempSum <= maxNumber){
                     madeByOverNumbers.add(tempSum);
+                }
             }
         }
     }
 
     private void init() {
-        for (int i = 0; i <= 28123; i++){
+        for (int i = 0; i <= maxNumber; i++){
             if(i < findPrimeNumberSum(i))
                 overNumbers.add(i);
         }
