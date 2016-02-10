@@ -8,5 +8,13 @@ public class Main {
     }
 
     private void initNumbers(){
+
+        for(int i = 0; i < staticNumbers.length; i++){
+
+        }
+
+        for(int j = 0; j < staticNumbers.length; j++){
+            
+        }
     }
 }
