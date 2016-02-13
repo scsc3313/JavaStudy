@@ -2,31 +2,42 @@ package com.company;
 
 public class Main {
 
+
+    private int i,value,max,counter,max2,z;
+
     public static void main(String[] args) {
         Main main = new Main();
         main.control();
     }
 
     private void control(){
-        for(int i = 1; i < 10; i++){
-            findCircleNumber(i);
+        init();
+        calculator();
+        System.out.println("max : " + max2);
+    }
+
+    private void init() {
+        max=0;
+        max2 = 0;
+    }
+
+    private void calculator() {
+        for (i=7;i<1000;i++){
+            counter=0;
+            value = 10%i;
+            z=1000;
+            //최대 1000번까지 계산을 할 수 있도록함
+            while (value != 1 && z>0){
+                value = value *10;
+                value = value % i;
+                counter++;
+                z--;
+            }
+            if (counter>max && z>1){
+                max=counter;
+                max2=i;
+            }
         }
     }
 
-    private void findCircleNumber(int d){
-        double number = (double) 1 / d ;
-        String numberString = String.valueOf(number);
-        char[] numbers = numberString.toCharArray();
-        for(int i = 2; i < numbers.length ; i++){
-            String circleNumber = "";
-            if(i < numbers.length -1){
-                if(numbers[i] != numbers[i+1]){
-                    circleNumber += numbers[i];
-                }
-                char[] tempNumbers = circleNumber.toCharArray();
-            }
-            System.out.print(circleNumber);
-        }
-        System.out.println(numberString);
-    }
 }
