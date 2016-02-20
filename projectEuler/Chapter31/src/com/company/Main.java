@@ -1,32 +1,24 @@
 package com.company;
 
 public class Main {
-    private int money[] = {1,2,5,10,20,50,100,200};
-
+    private long total = 0;
 
     public static void main(String[] args) {
         Main main = new Main();
         main.control();
     }
+
     private void control(){
-        int pence1 = 1;
-        int pence2 = 2;
-        int pence5 = 5;
-        int pence10 = 10;
-        int pence20 = 20;
-        int pence50 = 50;
-        int pound1 = 100;
-        int pound2 = 200;
-        int count = 0;
+        int target = 200;
+        int[] coinSizes = { 1, 2, 5, 10, 20, 50, 100, 200 };
+        int[] ways = new int[target+1];
+        ways[0] = 1;
 
-        calcualtor(count);
-
-    }
-
-    private void calcualtor(int count) {
-        int money200 = 200;
-        while(money200 == 0){
-            money200 -= money[7];
+        for (int i = 0; i < coinSizes.length; i++) {
+            for (int j = coinSizes[i]; j <= target; j++) {
+                ways[j] += ways[j - coinSizes[i]];
+            }
         }
+        System.out.println(ways[ways.length-1]);
     }
 }
