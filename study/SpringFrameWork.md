@@ -54,7 +54,7 @@
 
 ######MVC 구성 요소
 
-    ![구성요소](./images/mvcElements.png) 
+![구성요소](./images/mvcElements.png) 
     DispatcherServlet : 클라이언트의 요청을 전달받아 요청에 맞는 컨트롤러가 리턴한 결과값을 View에 전달하여 알맞은 응답을 생성
     HandlerMapping : 클라이언트의 요청 URL을 어떤 컨트롤러가 처리할지 결정
     Controller : 클라이언트의 요청을 처리한 뒤, 결과를 DispatcherServlet에게 리턴
