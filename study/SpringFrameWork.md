@@ -63,3 +63,14 @@
     ViewResolver : 컨트롤러의 처리 결과를 생성할 뷰를 결정
     View : 컨트롤러의 처리 결과 화면을 생성, JSP 또는 Velocity 템플릿 파일 등을 뷰로 사용
 
+#####Hibernate VS iBatis(myBatis)
+
+    Hibernate는 대표적인 ORM 프레임워크이다.  JPA는 퍼시스터스 사양이다.
+    HQL은 데이터에 대해서 선택 / 비선택 작업이 모두 수행 가능하지만 Criteria는 단지 선택 작업만이 수행 가능하다.
+    HQL은 정적 쿼리를 수행하기에, Criteria는 동적 쿼리를 수행하기에 적절하다.
+    HQL은 페이징 컨셉을 지원하지 않지만, Criteria는 지원한다.
+    Criteria는 일반적으로 HQL보다 수행속도가 느리다.
+    Criteria는 동적으로 쿼리를 생성하기 때문에 안전한 SQL인젝션이 가능하다. 반면 HQL은 정적 쿼리이기 때문에 SQL인젝션에 대한 안정성이 보장되지 않는다.
+
+- ORM(Object Relationship Mapper) : 자바 객체를 RDB 테이블을 객체지향적으로 사용하기 위한 기술이다.  RDB 테이블은 자바와 같은 언어로 접근하기 쉽지 않다. 때문에 ORM을 이용해 오브젝트와 RDB사이에 존재하는 개념과 접근을 객체지향적으로 다루기 위한 기술이다.
+
