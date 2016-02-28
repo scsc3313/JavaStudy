@@ -23,14 +23,16 @@ public class Main {
         ArrayList<Integer> realArrayList = new ArrayList<>();
         for(int i = 0; i < arrayList.size(); i++){
             int temp = 0;
+            if(arrayList.get(i) < 10)
+            realArrayList.add(arrayList.get(i));
             if(arrayList.get(i) > 10){
                 while(temp != arrayList.get(i)){
                     String tempString = String.valueOf(arrayList.get(i)%10) + String.valueOf(arrayList.get(i)/10);
                     temp = Integer.valueOf(tempString);
-                    if(!checkPrimeNumber(temp, arrayList))
-                        break;
+                    if(checkPrimeNumber(temp, arrayList))
+                        realArrayList.add(arrayList.get(i));
+                    temp = arrayList.get(i);
                 }
-                realArrayList.add(arrayList.get(i));
 
             }
         }
@@ -52,7 +54,7 @@ public class Main {
     }
 
     private void makePrimeNumbers(ArrayList<Integer> arrayList) {
-        for(int i = 1; i <= 100; i++){
+        for(int i = 1; i <= 1000000; i++){
             int count = 0;
             for(int j = 1; j <= i ; j++){
                 if(i % j == 0)
