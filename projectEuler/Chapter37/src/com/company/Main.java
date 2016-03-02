@@ -22,25 +22,35 @@ public class Main {
 
     private void control(){
         makePrimeNumbers();
-        print(arrayList);
         findRealPrimeNumbers(arrayList);
+        print(realArrayList);
     }
 
     private void findRealPrimeNumbers(ArrayList<Integer> arrayList) {
         for(int i = 0; i < arrayList.size(); i++){
+            boolean check = false;
+            boolean check2 = false;
             int tempNumber = arrayList.get(i);
+            int tempNumber2 = arrayList.get(i);
             while(tempNumber >= 10){
                 tempNumber /= 10;
-                if(checkIsPrimeNumber(tempNumber))
+                check = false;
+                if(!checkIsPrimeNumber(tempNumber))
                     break;
+                check = true;
             }
-            String stringNumber = String.valueOf(tempNumber);
+            String stringNumber = String.valueOf(tempNumber2);
             char[] arrayNumber = stringNumber.toCharArray();
-            while(arrayNumber.length != 1){
-                stringNumber = "";
-                for(int j = 0; j < arrayNumber.length; j++){
-                    stringNumber += arrayNumber[j];
-                }
+            while(tempNumber2 >= 10){
+                int size = (int) Math.pow(10, arrayNumber.length - 1);
+                tempNumber2 %= size;
+                check2 = false;
+                if(!checkIsPrimeNumber(tempNumber2))
+                    break;
+                check2 = true;
+            }
+            if(check && check2){
+                realArrayList.add(arrayList.get(i));
             }
         }
     }
@@ -55,7 +65,7 @@ public class Main {
 
 
     private void makePrimeNumbers() {
-        for(int i = 11; i < maxNumber ; i++){
+        for(int i = 2; i < maxNumber ; i++){
             int count = 0;
             for(int j = 1 ; j <= i ; j++){
                 if( i % j == 0 )
