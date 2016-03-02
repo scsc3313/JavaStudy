@@ -10,7 +10,7 @@ public class Main {
 
 
     public Main() {
-        maxNumber = 1000;
+        maxNumber = 1000000;
         arrayList = new ArrayList<>();
         realArrayList = new ArrayList<>();
     }
@@ -41,13 +41,15 @@ public class Main {
             }
             String stringNumber = String.valueOf(tempNumber2);
             char[] arrayNumber = stringNumber.toCharArray();
+            int count = 1;
             while(tempNumber2 >= 10){
-                int size = (int) Math.pow(10, arrayNumber.length - 1);
+                int size = (int) Math.pow(10, arrayNumber.length - count);
                 tempNumber2 %= size;
                 check2 = false;
                 if(!checkIsPrimeNumber(tempNumber2))
                     break;
                 check2 = true;
+                count++;
             }
             if(check && check2){
                 realArrayList.add(arrayList.get(i));
@@ -57,8 +59,11 @@ public class Main {
 
     private boolean checkIsPrimeNumber(int tempNumber) {
         for(int i = 0; i < arrayList.size(); i++){
-            if(tempNumber == arrayList.get(i))
+            if(tempNumber == arrayList.get(i)){
                 return true;
+            }
+            if(tempNumber < arrayList.get(i))
+                return false;
         }
         return false;
     }
@@ -80,7 +85,7 @@ public class Main {
 
     private void print(ArrayList<Integer> arrayList) {
         for(int i = 0; i < arrayList.size(); i++){
-            System.out.println(arrayList.get(i));
+            System.out.println(i+1 + "번째 : " + arrayList.get(i));
         }
     }
 }
