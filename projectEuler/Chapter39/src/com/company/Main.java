@@ -23,13 +23,25 @@ public class Main {
     }
 
     private void print() {
+        int max = 0;
+        int maxI  = 0;
         for(int i = 0; i < arrayList.size(); i++){
-            StringBuilder stringBuilder = new StringBuilder();
-            for(int j = 0 ; i < arrayList.get(i).length; i++){
-                stringBuilder.append(arrayList.get(i)[j]).append(" ");
+            int tempCount = findTotalSize(arrayList.get(i)[3]);
+            if(max < tempCount){
+                max = tempCount;
+                maxI = arrayList.get(i)[3];
             }
-            System.out.println(stringBuilder.toString());
         }
+        System.out.println("최대 횟수는 : " + max + " 둘레는 " + maxI);
+    }
+
+    private int findTotalSize(int totalSize) {
+        int count = 0;
+        for(int i = 0 ; i < arrayList.size(); i++){
+            if(totalSize == arrayList.get(i)[3])
+                count++;
+        }
+        return count;
     }
 
     private boolean find(int total) {
